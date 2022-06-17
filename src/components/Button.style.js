@@ -1,7 +1,19 @@
-import React from "react";
+import styled from "styled-components";
+import Button from "./Button";
 
-const Button = () => {
-  return <div>Button</div>;
-};
+export const StyledButton = styled(Button)`
+  width: 200px;
+  height: 50px;
+  background-color: ${(props) => props.backgroundColor};
 
-export default Button;
+  &:hover {
+    & label {
+      color: red;
+    }
+  }
+`;
+
+export const ButtonLabel = styled.label`
+  font-size: 25px;
+  color: white;
+`;
