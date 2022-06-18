@@ -24,6 +24,7 @@ const AddUser = ({ getUserData }) => {
     const userData = {
       username,
       age,
+      id: Math.random().toString(),
     };
     getUserData(userData);
     setUsername("");
