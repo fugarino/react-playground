@@ -20,19 +20,23 @@ const Form = ({ getUserData }) => {
       username,
       age,
     };
-    if (username === "" || age === "") {
+    if (username === "" || age === "" || age < 0) {
       setError(true);
-      console.log("hi");
     } else {
       getUserData(userData);
     }
     setUserName("");
     setAge("");
   };
+  const handleClose = (e) => {
+    if (e.target.className === "error-modal" || e.target.className === "btn") {
+      setError(false);
+    }
+  };
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      {error ? <ErrorModal /> : ""}
+      {error ? <ErrorModal handleClick={handleClose} /> : ""}
       <label>Username</label>
       <input value={username} onChange={handleUsernameChange} />
       <label>Age(Years)</label>

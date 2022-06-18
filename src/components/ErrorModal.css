@@ -15,4 +15,28 @@
   height: 10rem;
   background-color: white;
   border-radius: 10px;
+  overflow: hidden;
+}
+
+.modal-card header {
+  height: 3rem;
+  background-color: purple;
+  padding: 10px;
+  color: #fff;
+}
+
+.modal-card main {
+  padding: 10px;
+}
+
+.modal-card footer {
+  height: 4.6rem;
+  padding: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: right;
+}
+
+.modal-card footer button {
+  padding: 5px 10px;
 }
