@@ -48,7 +48,7 @@ const AddUser = ({ getUserData }) => {
   };
 
   return (
-    <div>
+    <>
       {error && (
         <ErrorModal handleClose={handleError} title={error.title} message={error.message} />
       )}
@@ -61,7 +61,7 @@ const AddUser = ({ getUserData }) => {
           <Button type="submit" text="Add" onClick={handleSubmit}></Button>
         </form>
       </Card>
-    </div>
+    </>
   );
 };
 
