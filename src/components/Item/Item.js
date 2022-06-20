@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./Item.module.css";
 
-const Item = ({ name, description, price }) => {
+const Item = ({ name, description, price, handleAdd }) => {
+  const [amount, setAmount] = useState(1);
+
+  const itemData = {
+    name,
+    description,
+    price,
+  };
+
+  const handleChange = (e) => {
+    setAmount(e.target.value);
+  };
+
+  const handleClick = () => {
+    handleAdd(itemData, amount);
+  };
+
   return (
     <div className={classes.item}>
       <div>
@@ -12,9 +28,9 @@ const Item = ({ name, description, price }) => {
       <div className={classes.btnContainer}>
         <div>
           <h5>Amount</h5>
-          <input value={1} type="number" />
+          <input value={amount} type="number" min={1} onChange={handleChange} />
         </div>
-        <button>+ Add</button>
+        <button onClick={handleClick}>+ Add</button>
       </div>
     </div>
   );
