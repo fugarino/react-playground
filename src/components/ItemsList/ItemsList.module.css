@@ -1,0 +1,14 @@
+.itemsListContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemsListContainer ul {
+  background-color: #fff;
+  box-shadow: 0 0 10px 3px rgb(225, 225, 225);
+  width: 90%;
+  max-width: 70rem;
+  padding: 2rem;
+  border-radius: 20px;
+}

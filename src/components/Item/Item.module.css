@@ -1,0 +1,39 @@
+.item {
+  color: brown;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgb(220, 220, 220);
+  display: flex;
+  justify-content: space-between;
+}
+
+.item:first-child {
+  padding-top: 0;
+}
+
+.item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.btnContainer div {
+  display: flex;
+  align-items: center;
+}
+
+.btnContainer input {
+  max-width: 30px;
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 3px;
+  padding: 0.1rem 0.2rem;
+  margin-left: 10px;
+}
+
+.btnContainer button {
+  padding: 0.2rem 1.2rem;
+  margin-top: 0.5rem;
+}
