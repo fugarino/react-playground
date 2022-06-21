@@ -1,8 +1,17 @@
 import React from "react";
+import Header from "./components/Layout/Header";
+import Meals from "./components/Meals/Meals";
 import "./App.css";
 
 function App() {
-  return <div className="App">hello world</div>;
+  return (
+    <>
+      <Header />
+      <main>
+        <Meals />
+      </main>
+    </>
+  );
 }
 
 export default App;
