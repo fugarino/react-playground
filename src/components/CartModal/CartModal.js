@@ -1,18 +1,24 @@
 import React from "react";
 import classes from "./CartModal.module.css";
+import CartModalList from "./CartModalList";
 
-const CartModal = ({ toggleCart }) => {
+const CartModal = ({ toggleCart, addedMeals }) => {
   return (
     <div
       id="modal-container"
       className={classes.modal}
       onClick={(e) => {
-        console.log(e.target.id);
+        if (e.target.id === "modal-container") {
+          toggleCart();
+        }
       }}
     >
-      <div>
+      <main>
+        <div>
+          <CartModalList addedMeals={addedMeals} />
+        </div>
         <button onClick={toggleCart}>Close</button>
-      </div>
+      </main>
     </div>
   );
 };

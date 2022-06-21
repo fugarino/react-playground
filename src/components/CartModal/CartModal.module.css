@@ -10,12 +10,17 @@
   justify-content: center;
 }
 
-.modal div {
+.modal main {
   width: 25rem;
   height: 40rem;
   border-radius: 20px;
   background-color: #fff;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.modal button {
+  cursor: pointer;
 }

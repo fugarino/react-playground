@@ -8,6 +8,7 @@ const Item = ({ name, description, price, handleAdd }) => {
     name,
     description,
     price,
+    amount: Number(amount),
   };
 
   const handleChange = (e) => {
@@ -15,7 +16,7 @@ const Item = ({ name, description, price, handleAdd }) => {
   };
 
   const handleClick = () => {
-    handleAdd(itemData, amount);
+    handleAdd(itemData);
   };
 
   return (

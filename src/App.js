@@ -31,14 +31,17 @@ const menuItemsData = [
 function App() {
   const [itemCount, setItemCount] = useState(0);
   const [cartActive, setCartActive] = useState(false);
+  const [addedMeals, setAddedMeals] = useState([]);
 
-  const handleAdd = (itemData, itemAmount) => {
+  const handleAdd = (itemData) => {
     setItemCount((prevItemCount) => {
-      return prevItemCount + Number(itemAmount);
+      return prevItemCount + Number(itemData.amount);
     });
 
-    console.log(itemData);
-    console.log(itemAmount);
+    // setAddedMeal(JSON.stringify(itemData));
+    setAddedMeals((prevAddedMeals) => {
+      return [...prevAddedMeals, itemData];
+    });
   };
 
   const toggleCart = () => {
@@ -49,7 +52,7 @@ function App() {
 
   return (
     <div className="App">
-      {cartActive && <CartModal toggleCart={toggleCart} />}
+      {cartActive && <CartModal toggleCart={toggleCart} addedMeals={addedMeals} />}
       <Navbar heading="ReactMeals" itemCount={itemCount} toggleCart={toggleCart} />
       <HeroCard
         heading="Delicious Food, Delivered To You"
